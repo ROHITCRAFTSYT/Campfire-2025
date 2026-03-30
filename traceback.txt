@@ -1,0 +1,39 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/screens.rpy", line 230, in script
+    style choice_button:
+  File "game/screens.rpy", line 231, in <module>
+    properties gui.button_properties("choice_button")
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+NameError: name 'button_tile' is not defined. Did you mean: 'button_width'?
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/screens.rpy", line 230, in script
+    style choice_button:
+  File "renpy/ast.py", line 2685, in execute
+    self.apply()
+    ~~~~~~~~~~^^
+  File "renpy/ast.py", line 2668, in apply
+    value = renpy.python.py_eval(expr)
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 231, in <module>
+    properties gui.button_properties("choice_button")
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/common/00gui.rpy", line 308, in button_properties
+    tile = button_tile
+           ^^^^^^^^^^^
+NameError: name 'button_tile' is not defined. Did you mean: 'button_width'?
+
+macOS-26.0-arm64-arm-64bit arm64
+Ren'Py 8.4.1.25072401
+Temporal Guardian 1.0
+Sat Sep 27 15:40:26 2025
